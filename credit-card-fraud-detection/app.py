@@ -1,39 +1,57 @@
+# credit-card-fraud-detection/app.py
+
 import streamlit as st
-import joblib
 import pandas as pd
+import numpy as np
+import joblib
+import requests
+from io import BytesIO
+
+# -----------------------------
+# Download and load models
+# -----------------------------
+
+model_url = "https://github.com/shubhumre777/gsoc-ml-projects/raw/main/credit-card-fraud-detection/models/rf_creditcard_model.pkl"
+scaler_url = "https://github.com/shubhumre777/gsoc-ml-projects/raw/main/credit-card-fraud-detection/models/scaler.pkl"
+
+@st.cache_data(show_spinner=False)
+def load_model(url):
+    response = requests.get(url)
+    return joblib.load(BytesIO(response.content))
+
+rf_model = load_model(model_url)
+scaler = load_model(scaler_url)
+
+# -----------------------------
+# Streamlit UI
+# -----------------------------
 
 st.set_page_config(page_title="Credit Card Fraud Detection", layout="centered")
+st.title("Credit Card Fraud Detection App")
 
-st.title("💳 Credit Card Fraud Detection")
-st.write("Enter transaction values and predict whether it is **Fraudulent** or **Normal**")
+st.write("""
+Enter the transaction details below to predict whether it is fraudulent.
+""")
 
-# Loadinf the  model and the scaler
-model = joblib.load("models/rf_creditcard_model.pkl")
-scaler = joblib.load("models/scaler.pkl")
+# Create input fields dynamically for 30 features
+input_data = {}
+for i in range(1, 29+1):  # V1 to V28
+    input_data[f"V{i}"] = st.number_input(f"V{i}", value=0.0)
 
-# Input section
-st.subheader("Transaction Details")
+input_data["Amount"] = st.number_input("Transaction Amount", value=0.0)
 
-inputs = {}
-feature_names = [
-    'Time','V1','V2','V3','V4','V5','V6','V7','V8','V9',
-    'V10','V11','V12','V13','V14','V15','V16','V17','V18','V19',
-    'V20','V21','V22','V23','V24','V25','V26','V27','V28','Amount'
-]
+# Convert to DataFrame
+input_df = pd.DataFrame([input_data])
 
-for feature in feature_names:
-    inputs[feature] = st.number_input(feature, value=0.0)
+# Scale features
+scaled_df = scaler.transform(input_df)
 
-# press button to predict : 
+# Prediction
+if st.button("Predict"):
+    pred = rf_model.predict(scaled_df)[0]
+    pred_prob = rf_model.predict_proba(scaled_df)[0][1]
 
-if st.button("🔍 Predict"):
-    input_df = pd.DataFrame([inputs])
-    input_scaled = scaler.transform(input_df)
-    prediction = model.predict(input_scaled)[0]
-
-    # predicts whether its a fraud or not ??????
-    
-    if prediction == 0:
-        st.success("✅ Transaction is NORMAL")
+    if pred == 1:
+        st.error(f"⚠️ Fraudulent Transaction! (Probability: {pred_prob:.2f})")
     else:
-        st.error("🚨 FRAUDULENT Transaction Detected!")
+        st.success(f"✅ Legitimate Transaction (Probability of Fraud: {pred_prob:.2f})")
