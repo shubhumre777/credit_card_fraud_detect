@@ -1,0 +1,9 @@
+# Ignore datasets
+data/raw/
+*.csv
+
+# Ignore trained models
+models/*.pkl
+
+# Ignore notebooks checkpoints
+.ipynb_checkpoints/
