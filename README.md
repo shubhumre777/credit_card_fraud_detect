@@ -32,5 +32,3 @@ This repository contains machine learning projects developed as preparation for 
 
 To build clean, reproducible, and well-documented machine learning projects aligned with open-source standards.
 
-
-
