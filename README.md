@@ -1,9 +1,3 @@
-\# GSoC ML Projects
-
-
-
-This repository contains machine learning projects developed as preparation for Google Summer of Code (GSoC) 2026.
-
 
 
 \## Projects
