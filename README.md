@@ -79,8 +79,10 @@ that uses a trained **Random Forest model** to classify transactions into:
 
 <p align="center">
   <img src="https://github.com/shubhumre777/credit_card_fraud_detect/blob/main/mermaid-diagram.png?raw=true" 
-       width="400" 
-       style="border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+       width="300" 
+       style="border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+
+
 </p>
 
 <p align="center">
