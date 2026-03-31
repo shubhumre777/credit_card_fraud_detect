@@ -3,7 +3,6 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff512f,100:dd2476&height=200&section=header&text=Credit%20Card%20Fraud%20Detection&fontSize=35&fontColor=ffffff&animation=fadeIn"/>
 </p>
 
-<h1 align="center">💳 Credit Card Fraud Detection System</h1>
 
 <p align="center">
   🚀 <b>Real-Time Machine Learning Fraud Detection App</b><br>
@@ -76,4 +75,14 @@ that uses a trained **Random Forest model** to classify transactions into:
 
 ---
 
-## 📂 Project Structure
+## 🖼️ Visual Overview
+
+<p align="center">
+  <img src="https://github.com/shubhumre777/credit_card_fraud_detect/blob/main/mermaid-diagram.png?raw=true" 
+       width="800" 
+       style="border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+</p>
+
+<p align="center">
+  <b>🔁 End-to-End Workflow of Fraud Detection System</b>
+</p>
