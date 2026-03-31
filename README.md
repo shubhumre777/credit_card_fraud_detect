@@ -10,6 +10,13 @@
   ⚡ Built with Streamlit | Scikit-learn | Random Forest
 </p>
 
+<!-- 🔥 LIVE APP BUTTON -->
+<p align="center">
+  <a href="https://gsoc-ml-projects-9slwsy83v3bjdmzpykinja.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Live%20App-Click%20Here-brightgreen?style=for-the-badge&logo=streamlit">
+  </a>
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python">
   <img src="https://img.shields.io/badge/Streamlit-App-red?style=for-the-badge&logo=streamlit">
@@ -24,6 +31,13 @@
 
 ---
 
+## 🌐 Live Demo
+
+🚀 Experience the app here:  
+👉 **https://gsoc-ml-projects-9slwsy83v3bjdmzpykinja.streamlit.app/**
+
+---
+
 ## Overview
 
 💡 This project is a **real-time Credit Card Fraud Detection System**  
@@ -33,9 +47,9 @@ that uses a trained **Random Forest model** to classify transactions into:
 - ⚠️ **Fraudulent Transactions**
 
 🔥 Designed for:
-- Real-time predictions
-- High accuracy
-- Clean UI experience
+- Real-time predictions  
+- High accuracy  
+- Clean UI experience  
 
 ---
 
@@ -63,15 +77,3 @@ that uses a trained **Random Forest model** to classify transactions into:
 ---
 
 ## 📂 Project Structure
-credit-card-fraud-detection
-┣ 📂 models
-┃ ┣ rf_creditcard_model.pkl
-┃ ┗ scaler.pkl
-┣ 📂 notebooks
-┣ 📂 src
-┣ app.py
-┣ requirements.txt
-┗ README.md
-
-## Visual Overview 
-
