@@ -88,3 +88,15 @@ that uses a trained **Random Forest model** to classify transactions into:
 <p align="center">
   <b>🔁 End-to-End Workflow of Fraud Detection System</b>
 </p>
+
+## 🏗️ System Architecture
+
+<p align="center">
+  <img src="https://github.com/shubhumre777/credit_card_fraud_detect/blob/main/image_91ba28f5%20(1).png?raw=true" 
+       width="300"
+       style="border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.3);">
+</p>
+
+<p align="center">
+  <b>⚙️ High-Level Architecture of the Fraud Detection Pipeline</b>
+</p>
