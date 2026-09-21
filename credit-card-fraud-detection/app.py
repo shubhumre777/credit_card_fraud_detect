@@ -4,12 +4,9 @@ import pandas as pd
 import requests
 from io import BytesIO
 
-st.header("This is a header with a rainbow line", divider="rainbow")
 
-st.title("Credit Card Fraud Detection")
+st.title("Credit Card Fraud Detection" , divider="rainbow")
 st.write("Enter transaction details to predict if it is Fraudulent or Normal")
-
-st.header("This is a header with a rainbow line", divider="rainbow")
 
 
 url_model = "https://github.com/shubhumre777/gsoc-ml-projects/raw/main/credit-card-fraud-detection/models/rf_creditcard_model.pkl"
