@@ -5,8 +5,16 @@ import requests
 from io import BytesIO
 
 
-st.title("Credit Card Fraud Detection" , divider="rainbow")
+st.title("Credit Card Fraud Detection")
 st.write("Enter transaction details to predict if it is Fraudulent or Normal")
+
+st.markdown("""
+<div style="
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    margin: 30px 0;
+"></div>
+""", unsafe_allow_html=True)
 
 
 url_model = "https://github.com/shubhumre777/gsoc-ml-projects/raw/main/credit-card-fraud-detection/models/rf_creditcard_model.pkl"
