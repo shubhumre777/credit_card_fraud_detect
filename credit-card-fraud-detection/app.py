@@ -56,7 +56,7 @@ if st.button('Predict'):
 
     fraud_percentage = fraud_probability * 100
 
-     risk_score = round(fraud_percentage)
+    risk_score = round(fraud_percentage)
 
     if risk_score < 20:
         risk_level = "🟢 Low Risk"
