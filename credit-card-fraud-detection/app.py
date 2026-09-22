@@ -56,12 +56,58 @@ if st.button('Predict'):
 
     fraud_percentage = fraud_probability * 100
 
-    st.subheader("Transaction Analysis")
+     risk_score = round(fraud_percentage)
 
-    st.metric(
-        "Fraud Probability",
-        f"{fraud_percentage:.2f}%"
-    )
+    if risk_score < 20:
+        risk_level = "🟢 Low Risk"
+    elif risk_score < 50:
+        risk_level = "🟡 Medium Risk"
+    elif risk_score < 80:
+        risk_level = "🟠 High Risk"
+    else:
+        risk_level = "🔴 Critical Risk"
+
+    st.markdown("""
+    <div style="
+        margin-top: 30px;
+        margin-bottom: 25px;
+        padding: 12px;
+        border-radius: 10px;
+        text-align: center;
+        background: linear-gradient(90deg, #111827, #1e293b);
+        border: 1px solid #334155;
+    ">
+        <h3 style="margin: 0; color: #38bdf8;">
+            🛡️ TRANSACTION RISK ANALYSIS
+        </h3>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric(
+            "Fraud Probability",
+            f"{fraud_percentage:.2f}%"
+        )
+
+    with col2:
+        st.metric(
+            "Risk Score",
+            f"{risk_score}/100"
+        )
+
+    with col3:
+        st.metric(
+            "Risk Level",
+            risk_level
+        )
+    
+
+    # st.metric(
+    #     "Fraud Probability",
+    #     f"{fraud_percentage:.2f}%"
+    # )
 
     st.progress(int(fraud_percentage))
 
