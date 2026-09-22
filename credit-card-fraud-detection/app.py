@@ -36,11 +36,38 @@ features = [
 
 inputs = {}
 
-for col in features:
-    inputs[col] = st.number_input(
-        f'{col}',
+st.subheader("💳 Transaction Information")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    inputs["Time"] = st.number_input(
+        "Transaction Time",
         value=0.0
     )
+
+with col2:
+    inputs["Amount"] = st.number_input(
+        "Transaction Amount",
+        value=0.0
+    )
+
+st.markdown("---")
+
+st.subheader("🧠 PCA Features")
+
+with st.expander("Show Advanced Features (V1 - V28)", expanded=True):
+
+    cols = st.columns(4)
+
+    for i in range(28):
+        with cols[i % 4]:
+            feature = f"V{i + 1}"
+
+            inputs[feature] = st.number_input(
+                feature,
+                value=0.0
+            )
 
 if st.button('Predict'):
 
