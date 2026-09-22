@@ -73,6 +73,8 @@ if st.button('Predict'):
 
     input_df = pd.DataFrame([inputs])
 
+    input_df = input_df[features]
+
     input_scaled = scaler.transform(input_df)
 
     prediction = model.predict(input_scaled)[0]
@@ -129,12 +131,6 @@ if st.button('Predict'):
             "Risk Level",
             risk_level
         )
-    
-
-    # st.metric(
-    #     "Fraud Probability",
-    #     f"{fraud_percentage:.2f}%"
-    # )
 
     st.progress(int(fraud_percentage))
 
