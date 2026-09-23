@@ -136,5 +136,17 @@ if st.button('Predict'):
 
     if prediction == 0:
         st.success("✅ Transaction is Normal")
+
+        st.info(
+            f"The model estimates a fraud probability of "
+            f"{fraud_percentage:.2f}%. "
+            "The transaction is currently classified as low risk."
+        )
     else:
         st.error("⚠️ Transaction is Fraudulent")
+
+        st.warning(
+                f"The model estimates a fraud probability of "
+                f"{fraud_percentage:.2f}%. "
+                "This transaction should be reviewed before approval."
+            )
